@@ -11,8 +11,9 @@ public class allLocators extends parent {
         PageFactory.initElements(GWD.getDriver(),this);
     }
 
-    @FindBy(css = "a[href='/Account/Login_Register'] ")
+    @FindBy(css = "a[href='/account/login-register")
     public WebElement loginAndRegister;
+
 
 
     public WebElement getWebElement(String target) {

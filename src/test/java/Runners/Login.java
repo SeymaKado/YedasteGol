@@ -9,7 +9,9 @@ import org.testng.annotations.AfterClass;
         tags = "@Login",
         features = {"src/test/java/FeatureFiles"},
         glue = {"StepDefinitions"},
-        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+        plugin= {"json:target/cucumber/cucumber.json"} // Jenkins için JSON report
+
+       // plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class Login extends AbstractTestNGCucumberTests {
     @AfterClass

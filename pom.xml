@@ -99,5 +99,30 @@
 
     </dependencies>
 
+    <!--  Jenkins in Çalıştırma komutunun , nereyi açlıştıracağını belirlediğimiz plugin -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <configuration>
+                  <!--  for testNG xml
+                    &lt;!&ndash;                    <suiteXmlFiles>&ndash;&gt;
+                    &lt;!&ndash;                        <suiteXmlFile>testng.xml</suiteXmlFile>&ndash;&gt;
+                    &lt;!&ndash;                    </suiteXmlFiles>&ndash;&gt;
+-->
+                    <includes>
+                        <!-- for  run class or classes  **/:bulunduğu lokasyonu bütün klasörlere göre bulabiliyor   -->
+                        <include>**/RunAllTest.java</include>
+                    </includes>
+
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
 
 </project>

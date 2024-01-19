@@ -8,7 +8,9 @@ import org.testng.annotations.AfterClass;
 @CucumberOptions(
         features = {"src/test/java/FeatureFiles"},
         glue = {"StepDefinitions"},
-        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+        plugin= {"json:target/cucumber/cucumber.json"} // Jenkins için JSON report
+
+        //plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class RunAllTest extends AbstractTestNGCucumberTests {
 
