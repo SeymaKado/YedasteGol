@@ -33,8 +33,13 @@ public class allLocators extends parent {
     @FindBy(xpath = "(//a[@href='/product/fl-1001/bouquet-of-10-red-roses'])[1]")
     public WebElement firstProduct;
 
-    @FindBy(xpath = "/html/body/div/div[1]/div/div/div[3]/div[1]/div[2]/button[5]/img")
+    @FindBy(xpath = "//*[contains(text(),’سفارش دهید’)]")
     public WebElement orderButton;
+
+    @FindBy(xpath = "//*[contains(text(),’سفارش دهید’)]")
+    public WebElement date;
+
+    //div[@data-id='dayAfterTomorrow']
 
 
     public WebElement getWebElement(String target) {
@@ -48,6 +53,7 @@ public class allLocators extends parent {
             case "firstBanner": return this.firstBanner;
             case "firstProduct": return this.firstProduct;
             case "orderButton": return this.orderButton;
+            case "date": return this.date;
         }
         return null;
     }
