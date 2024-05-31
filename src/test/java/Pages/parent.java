@@ -48,6 +48,7 @@ public class parent {
 
 
     public void clickByJavaScript(WebElement targetElement) {
+
         wait.until(ExpectedConditions.visibilityOf(targetElement));
         wait.until(ExpectedConditions.elementToBeClickable(targetElement));
         scrollFocusElement(targetElement);
@@ -56,7 +57,7 @@ public class parent {
 
 
     //click li hover click istemesen click yazan yeri kaldr build kalsn
-    public void hoverTarget(WebElement targetElement){
+    public void hoverTarget(WebElement targetElement) {
         Actions actions = new Actions(GWD.getDriver());
         wait.until(ExpectedConditions.visibilityOf(targetElement));
         Action action = actions.moveToElement(targetElement).click().build();

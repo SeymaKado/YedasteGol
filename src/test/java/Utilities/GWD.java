@@ -24,10 +24,10 @@ public class GWD {
         if (driver == null) { // 1 kere çalışssın
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*");
-            Dimension phoneSize=new Dimension(375,812);
+           // Dimension phoneSize=new Dimension(375,812);
            driver = new ChromeDriver(options);
-           driver.manage().window().setSize(phoneSize);
-          //  driver.manage().window().maximize();
+         //  driver.manage().window().setSize(phoneSize);
+            driver.manage().window().maximize();
         }
         return driver;
     }

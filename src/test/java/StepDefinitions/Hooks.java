@@ -19,6 +19,6 @@ public class Hooks {
 //            byte[] inMemoryState = screenshotTaker.getScreenshotAs(OutputType.BYTES);
 //            testCase.attach(inMemoryState,"image/png","screenshot name");
 //        }
-        GWD.quitDriver();
+      //  GWD.quitDriver();
     }
 }

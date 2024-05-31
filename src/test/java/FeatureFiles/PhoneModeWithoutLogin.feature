@@ -6,6 +6,7 @@ Feature: PhoneModeWithoutLogin
     |firstBanner|
     Then Click On The Element WithJavascript
     |firstProduct|
+    Then SelectDropdown
     Then  Click On The Element WithJavascript
     |orderButton|
 

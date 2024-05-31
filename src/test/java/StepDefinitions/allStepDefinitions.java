@@ -10,7 +10,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class allStepDefinitions extends GWD {
@@ -58,7 +61,11 @@ public class allStepDefinitions extends GWD {
             WebElement webElement = aL.getWebElement(elementName);
             aL.clickByJavaScript(webElement);
         }
-
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -71,5 +78,23 @@ public class allStepDefinitions extends GWD {
         }
 
 
+    }
+
+    @Then("SelectDropdown")
+    public void clickOnTheElementWithJavascriptll() {
+
+
+        // Dropdown menüyü bulun
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement dropdownElement = driver.findElement(By.xpath("(//select[@placeholder='شهر خود را انتخاب کنید'])[1]"));
+
+        // Dropdown menüyü seçin
+        Select dropdown = new Select(dropdownElement);
+        //dropdown.selectByValue("441");  // Seçmek istediğiniz metni girin
+        dropdown.selectByVisibleText("اراک");
+
+        // Seçilen öğeyi tıklayın (gerekiyorsa)
+        WebElement selectedOption = dropdown.getFirstSelectedOption();
+        selectedOption.click();
     }
 }
