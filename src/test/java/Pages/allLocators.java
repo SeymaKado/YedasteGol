@@ -33,13 +33,18 @@ public class allLocators extends parent {
     @FindBy(xpath = "(//a[@href='/product/fl-1001/bouquet-of-10-red-roses'])[1]")
     public WebElement firstProduct;
 
-    @FindBy(xpath = "//*[contains(text(),’سفارش دهید’)]")
+    @FindBy(xpath = "//div[@data-id='tomorrow'][h3='فردا']")
+    public WebElement date;
+    @FindBy(xpath ="//*[contains(text(),’سفارش دهید’)]")
     public WebElement orderButton;
 
-    @FindBy(xpath = "//*[contains(text(),’سفارش دهید’)]")
-    public WebElement date;
+    @FindBy(xpath ="//select[@placeholder='شهر خود را انتخاب کنید']")
+    public WebElement cityDropdownName;
 
-    //div[@data-id='dayAfterTomorrow']
+    @FindBy(xpath = "")
+    public WebElement cityDropdownName2;
+
+
 
 
     public WebElement getWebElement(String target) {
@@ -52,8 +57,10 @@ public class allLocators extends parent {
             case "entrance2": return this.entrance2;
             case "firstBanner": return this.firstBanner;
             case "firstProduct": return this.firstProduct;
-            case "orderButton": return this.orderButton;
             case "date": return this.date;
+            case "orderButton": return this.orderButton;
+            case "cityDropdownName": return this.cityDropdownName;
+            case "cityDropdownName2": return this.cityDropdownName2;
         }
         return null;
     }

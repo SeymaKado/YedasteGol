@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -16,7 +17,7 @@ import java.time.Duration;
 
 import static Utilities.GWD.driver;
 
-public class parent {
+public class parent{
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
     public JavascriptExecutor javascript = (JavascriptExecutor) GWD.getDriver();
 
@@ -62,6 +63,15 @@ public class parent {
         wait.until(ExpectedConditions.visibilityOf(targetElement));
         Action action = actions.moveToElement(targetElement).click().build();
         action.perform();
+    }
+
+
+
+    public void dropdownHandler(WebElement targetElement, String value){
+        wait.until(ExpectedConditions.visibilityOf(targetElement));
+        wait.until(ExpectedConditions.elementToBeClickable(targetElement));
+        Select dropdownControl = new Select(targetElement);
+        dropdownControl.selectByValue(value);
     }
 
 
